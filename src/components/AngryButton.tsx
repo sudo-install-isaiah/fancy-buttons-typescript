@@ -1,4 +1,9 @@
+import { useState } from 'react'
+
+
 export default function AngryButton() {
+	const [anger, setAnger] = useState()
+
 	return (
 		<button className='AngryButton'>
 			{/* If you have NOT reached the maximum */}
