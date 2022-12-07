@@ -9,6 +9,11 @@ function App() {
 	const [light, setLight] = useState(false);
 	const [anger, setAnger] = useState(0);
 	const [clickAmount, setClickAmount] = useState(0);
+	const [reps, setReps] = useState(1);
+
+	const repeat = () => {
+		setReps(reps + 1);
+	};
 
 	const handleClick = () => {
 		setClickAmount(clickAmount + 1);
@@ -34,7 +39,7 @@ function App() {
 				<AngryButton anger={anger} rageMore={rageMore} />
 				<CounterButton clickAmount={clickAmount} handleClick={handleClick} />
 				<LightSwitchButton light={light} switchLight={switchLight} />
-				<TextRepeaterButton />
+				<TextRepeaterButton reps={reps} repeat={repeat} />
 			</section>
 		</div>
 	);
