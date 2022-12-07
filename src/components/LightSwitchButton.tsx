@@ -2,6 +2,9 @@ import { useState } from "react";
 
 export default function LightSwitchButton() {
 	const [light, setLight] = useState(false);
+	const handleClick = () => {
+		setLight(light ? false : true);
+	};
 
 	return (
 		<button className='LightSwitchButton'>
