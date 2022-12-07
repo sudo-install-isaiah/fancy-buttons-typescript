@@ -8,6 +8,11 @@ import TextRepeaterButton from "./components/TextRepeaterButton";
 function App() {
 	const [light, setLight] = useState(false);
 	const [anger, setAnger] = useState(0);
+	const [clickAmount, setClickAmount] = useState(0);
+
+	const handleClick = () => {
+		setClickAmount(clickAmount + 1);
+	};
 
 	const rageMore = () => {
 		if (anger < 1) {
@@ -27,7 +32,7 @@ function App() {
 			<h1>Fancy Buttons!</h1>
 			<section>
 				<AngryButton anger={anger} rageMore={rageMore} />
-				<CounterButton />
+				<CounterButton clickAmount={clickAmount} handleClick={handleClick} />
 				<LightSwitchButton light={light} switchLight={switchLight} />
 				<TextRepeaterButton />
 			</section>
