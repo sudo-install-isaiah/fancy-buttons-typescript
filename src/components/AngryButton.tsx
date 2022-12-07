@@ -1,18 +1,12 @@
-import { useState } from "react";
+type AppProps = {
+	anger: number;
+	rageMore: () => void;
+};
 
-export default function AngryButton() {
-	const [anger, setAnger] = useState(0);
-
-	const handleClick = () => {
-		if (anger < 1) {
-			setAnger(anger + 0.1);
-		} else {
-			setAnger(0);
-		}
-	};
-
+export default function AngryButton({ anger, rageMore }: AppProps) {
 	return (
 		<button
+			onClick={rageMore}
 			style={{ backgroundColor: `rgba(255,0,0,${anger})` }}
 			className='AngryButton'
 		>
