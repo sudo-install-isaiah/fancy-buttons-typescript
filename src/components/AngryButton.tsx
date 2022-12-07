@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function AngryButton() {
-	const [anger, setAnger] = useState();
+	const [anger, setAnger] = useState(0);
 
 	return (
 		<button
